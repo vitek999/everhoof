@@ -21,8 +21,9 @@ export default {
           'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap',
       },
     ],
+    script: [{ src: '/js/set.min.js' }, { src: '/js/ie11vars.min.js' }, { src: '/js/svgxuse.min.js' }],
     htmlAttrs: {
-      class: ['page page_theme_dark page_theme_blue'],
+      class: ['page page_theme_dark page_theme_red'],
     },
     bodyAttrs: {
       class: ['page__body grid grid_type_default'],
@@ -45,6 +46,10 @@ export default {
   plugins: [
     {
       src: '~/plugins/nuxt-client-init.client.ts',
+      ssr: false,
+    },
+    {
+      src: '~/plugins/polyfills.ts',
       ssr: false,
     },
   ],
