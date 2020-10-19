@@ -65,7 +65,7 @@
 		& .icon
 			fill currentColor
 
-	&__meta
+	&__main
 		display flex
 		width 100%
 		margin-top 8px
@@ -91,15 +91,29 @@
 			width 81px
 			height 81px
 
-	&__meta-text
+	&__meta
+		display flex
 		overflow hidden
 		flex-grow 1
+		flex-direction column
 		margin-left 16px
 
 		&:hover
 			& ^[0]__meta-title,
 			& ^[0]__meta-artist
 				white-space inherit
+
+		+below(550px)
+			& ^[0]__meta-title,
+			& ^[0]__meta-artist
+				white-space inherit
+
+	&__meta-text
+		flex-grow 1
+		margin 0 0 12px
+
+		&:last-child
+			margin-bottom 0
 
 	&__meta-title
 		overflow hidden
@@ -124,13 +138,9 @@
 			color #ef5350
 
 	&__progress
-		flex-grow 1
-		margin 0 0 0 -56px
+		margin 0
 		padding 0 0 8px
 		border-bottom 1px solid rgba(255, 255, 255, .07)
-
-		+above(400px)
-			margin-left 0
 
 	&__controls
 		display flex

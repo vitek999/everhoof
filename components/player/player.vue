@@ -8,20 +8,20 @@
         <svg-icon class="player__icon" name="m3u" />
       </a>
     </div>
-    <div class="player__meta">
+    <div class="player__main">
       <button class="player__play-button" @click="play">
         <svg-icon v-if="playing" name="pause" />
         <svg-icon v-else name="play_arrow" />
       </button>
-      <div class="player__meta-text">
-        <div class="player__meta-title">{{ title }}</div>
-        <div class="player__meta-artist">
-          {{ artist }}
-        </div>
-        <div class="player__meta-row">
-          <div v-if="!isLiveStream" class="player__progress">
-            <b-slider :value="progress" :duration="track.duration" with-time />
+      <div class="player__meta">
+        <div class="player__meta-text">
+          <div class="player__meta-title">{{ title }}</div>
+          <div class="player__meta-artist">
+            {{ artist }}
           </div>
+        </div>
+        <div v-if="!isLiveStream" class="player__progress">
+          <b-slider :value="progress" :duration="track.duration" with-time />
         </div>
       </div>
     </div>
