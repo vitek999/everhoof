@@ -3835,16 +3835,16 @@ var external_nuxt_property_decorator_ = __webpack_require__(1);
 // EXTERNAL MODULE: external "luxon"
 var external_luxon_ = __webpack_require__(36);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/player/player.vue?vue&type=template&id=bc2e4804&
-var playervue_type_template_id_bc2e4804_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"player"},[_vm._ssrNode("<audio hidden=\"hidden\" src=\"/silence.mp3\"></audio> "),_vm._ssrNode("<div class=\"player__header\">","</div>",[_vm._ssrNode("<h1 class=\"player__title\">"+_vm._ssrEscape(_vm._s(_vm.station.name))+"</h1> "),_vm._ssrNode("<span class=\"player__listeners-counter\">","</span>",[_c('svg-icon',{staticClass:"player__icon",attrs:{"name":"people_alt"}}),_vm._ssrNode(_vm._ssrEscape("\n      "+_vm._s(_vm.listenersCount)+"\n    "))],2),_vm._ssrNode(" "),_vm._ssrNode("<a"+(_vm._ssrAttr("href",_vm.station.playlists.m3u))+" class=\"player__download-playlist\">","</a>",[_c('svg-icon',{staticClass:"player__icon",attrs:{"name":"m3u"}})],1)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__meta\">","</div>",[_vm._ssrNode("<button class=\"player__play-button\">","</button>",[(_vm.playing)?_c('svg-icon',{attrs:{"name":"pause"}}):_c('svg-icon',{attrs:{"name":"play_arrow"}})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__meta-text\">","</div>",[_vm._ssrNode("<div class=\"player__meta-title\">"+_vm._ssrEscape(_vm._s(_vm.title))+"</div> <div class=\"player__meta-artist\">"+_vm._ssrEscape("\n        "+_vm._s(_vm.artist)+"\n      ")+"</div> "),_vm._ssrNode("<div class=\"player__meta-row\">","</div>",[(!_vm.isLiveStream)?_vm._ssrNode("<div class=\"player__progress\">","</div>",[_c('b-slider',{attrs:{"value":_vm.progress,"duration":_vm.track.duration,"with-time":""}})],1):_vm._e()])],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__controls\">","</div>",[_vm._ssrNode("<div class=\"player__control player__quality-selector\">","</div>",[_c('b-select',{attrs:{"items":_vm.station.mounts.map(function (ref) {
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/player/player.vue?vue&type=template&id=cec850e8&
+var playervue_type_template_id_cec850e8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"player"},[_vm._ssrNode("<audio hidden=\"hidden\" src=\"/silence.mp3\"></audio> "),_vm._ssrNode("<div class=\"player__header\">","</div>",[_vm._ssrNode("<h1 class=\"player__title\">"+_vm._ssrEscape(_vm._s(_vm.station.name))+"</h1> "),_vm._ssrNode("<span class=\"player__listeners-counter\">","</span>",[_c('svg-icon',{staticClass:"player__icon",attrs:{"name":"people_alt"}}),_vm._ssrNode(_vm._ssrEscape("\n      "+_vm._s(_vm.listenersCount)+"\n    "))],2),_vm._ssrNode(" "),_vm._ssrNode("<a"+(_vm._ssrAttr("href",_vm.station.playlists.m3u))+" class=\"player__download-playlist\">","</a>",[_c('svg-icon',{staticClass:"player__icon",attrs:{"name":"m3u"}})],1)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__meta\">","</div>",[_vm._ssrNode("<button class=\"player__play-button\">","</button>",[(_vm.playing)?_c('svg-icon',{attrs:{"name":"pause"}}):_c('svg-icon',{attrs:{"name":"play_arrow"}})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__meta-text\">","</div>",[_vm._ssrNode("<div class=\"player__meta-title\">"+_vm._ssrEscape(_vm._s(_vm.title))+"</div> <div class=\"player__meta-artist\">"+_vm._ssrEscape("\n        "+_vm._s(_vm.artist)+"\n      ")+"</div> "),_vm._ssrNode("<div class=\"player__meta-row\">","</div>",[(!_vm.isLiveStream)?_vm._ssrNode("<div class=\"player__progress\">","</div>",[_c('b-slider',{attrs:{"value":_vm.progress,"duration":_vm.track.duration,"with-time":""}})],1):_vm._e()])],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__controls\">","</div>",[_vm._ssrNode("<div class=\"player__control player__quality-selector\">","</div>",[_c('b-select',{attrs:{"items":_vm.station.mounts.map(function (ref) {
 	var name = ref.name;
 
 	return name;
 }),"value":_vm.streamOrderId},on:{"input":_vm.selectStream}})],1),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"player__control player__volume-slider\">","</div>",[_c('b-volume-slider',{attrs:{"volume":_vm.volume,"muted":_vm.muted},on:{"update:volume":_vm.setVolume,"update:muted":_vm.setMuted}})],1)],2)],2)}
-var playervue_type_template_id_bc2e4804_staticRenderFns = []
+var playervue_type_template_id_cec850e8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/player/player.vue?vue&type=template&id=bc2e4804&
+// CONCATENATED MODULE: ./components/player/player.vue?vue&type=template&id=cec850e8&
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/button/button.vue?vue&type=template&id=02ef269a&
 var buttonvue_type_template_id_02ef269a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"button",class:{
@@ -4498,7 +4498,7 @@ let playervue_type_script_lang_ts_Player = class Player extends external_nuxt_pr
   get stream() {
     var _a;
 
-    return ((_a = this.station.mounts[this.streamOrderId]) === null || _a === void 0 ? void 0 : _a.url) || '';
+    return (((_a = this.station.mounts[this.streamOrderId]) === null || _a === void 0 ? void 0 : _a.url) || '').replace(/^(https:|http:)/, '');
   }
 
   get playingData() {
@@ -4641,8 +4641,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var player_component = normalizeComponent(
   player_playervue_type_script_lang_ts_,
-  playervue_type_template_id_bc2e4804_render,
-  playervue_type_template_id_bc2e4804_staticRenderFns,
+  playervue_type_template_id_cec850e8_render,
+  playervue_type_template_id_cec850e8_staticRenderFns,
   false,
   player_injectStyles,
   null,
