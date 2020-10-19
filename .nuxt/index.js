@@ -21,6 +21,7 @@ import nuxt_plugin_cookieuniversalnuxt_49c5cea6 from 'nuxt_plugin_cookieuniversa
 import nuxt_plugin_nuxttypedvuex_c93a9356 from 'nuxt_plugin_nuxttypedvuex_c93a9356' // Source: .\\nuxt-typed-vuex.js (mode: 'all')
 import nuxt_plugin_router_0db40071 from 'nuxt_plugin_router_0db40071' // Source: .\\router.js (mode: 'all')
 import nuxt_plugin_nuxtclientinitclient_a74159dc from 'nuxt_plugin_nuxtclientinitclient_a74159dc' // Source: ..\\plugins\\nuxt-client-init.client.ts (mode: 'client')
+import nuxt_plugin_polyfills_473a241f from 'nuxt_plugin_polyfills_473a241f' // Source: ..\\plugins\\polyfills.ts (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -80,7 +81,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"@everhoof\u002Feverhoof","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Website fo internet radio"}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ffavicon.png"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"}],"htmlAttrs":{"class":["page page_theme_dark page_theme_blue"]},"bodyAttrs":{"class":["page__body grid grid_type_default"]},"style":[],"script":[]},
+    head: {"title":"@everhoof\u002Feverhoof","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Website fo internet radio"}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ffavicon.png"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"}],"script":[{"src":"\u002Fjs\u002Fset.min.js"},{"src":"\u002Fjs\u002Fie11vars.min.js"},{"src":"\u002Fjs\u002Fsvgxuse.min.js"}],"htmlAttrs":{"class":["page page_theme_dark page_theme_red"]},"bodyAttrs":{"class":["page__body grid grid_type_default"]},"style":[]},
 
     store,
     router,
@@ -239,6 +240,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_nuxtclientinitclient_a74159dc === 'function') {
     await nuxt_plugin_nuxtclientinitclient_a74159dc(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_polyfills_473a241f === 'function') {
+    await nuxt_plugin_polyfills_473a241f(app.context, inject)
   }
 
   // Lock enablePreview in context
