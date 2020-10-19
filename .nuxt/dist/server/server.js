@@ -869,7 +869,7 @@ module.exports = require("vue-no-ssr");
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(109)
+module.exports = __webpack_require__(107)
 
 
 /***/ }),
@@ -1731,7 +1731,7 @@ module.exports = require("cookie-universal");
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(126);
+module.exports = __webpack_require__(124);
 
 
 /***/ }),
@@ -2304,64 +2304,15 @@ __webpack_require__.r(__webpack_exports__);
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(101);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(102);
 exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "*,:after,:before{box-sizing:border-box;margin:0}#__layout,#__nuxt{height:100%}.icon{max-width:100%;max-height:100%}.page{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;height:100%;min-height:100%}.page__wrapper{display:flex;flex-direction:column;height:100%}.page__body{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;height:100%;min-height:100%;color:var(--primary-text);font-family:\"Open Sans\",sans-serif;font-size:14px;line-height:1.5;background:#0f1014 url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") no-repeat fixed 50%/cover}.page__body_overflow_hidden{overflow:hidden}.page__header{position:fixed;top:0;right:0;left:0;z-index:99}.page__main{overflow:hidden;flex-grow:1;height:calc(100vh - 88px)}.page__main:after{content:\"\";display:table;clear:both}.page__content{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;width:100%;height:100%;max-height:100%;padding:16px 16px 0;transition:all .1s ease}", ""]);
+exports.push([module.i, "*,:after,:before{box-sizing:border-box;margin:0}#__layout,#__nuxt{height:100%}.icon{max-width:100%;max-height:100%}.page{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;height:100%;min-height:100%}.page__wrapper{display:flex;flex-direction:column;height:100%}.page__body{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;height:100%;min-height:100%;color:var(--primary-text);font-family:\"Open Sans\",sans-serif;font-size:14px;line-height:1.5;background:#0f1014 url(/bg.svg) no-repeat fixed 50%/cover}.page__body_overflow_hidden{overflow:hidden}.page__header{position:fixed;top:0;right:0;left:0;z-index:99}.page__main{overflow:hidden;flex-grow:1;height:calc(100vh - 88px)}.page__main:after{content:\"\";display:table;clear:both}.page__content{overflow-x:hidden;overflow-y:auto;overflow:hidden auto;width:100%;height:100%;max-height:100%;padding:16px 16px 0;transition:all .1s ease}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 /* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== 'string') {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjU2MCIgaGVpZ2h0PSI5NTEiIHZpZXdCb3g9IjAgMCAyNTYwIDk1MSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxyZWN0IHdpZHRoPSIyNTYwIiBoZWlnaHQ9Ijk1MSIgZmlsbD0iIzJDMkMyQyIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDMzN0w2MSAzNzVDMTIyIDQxMyAyNDQgNDkwIDM2NiA0NjVDNDg4IDQzOSA2MTAgMzExIDczMSAzNjJDODUzIDQxMyA5NzUgNjQ0IDEwOTcgNzQ2QzEyMTkgODQ5IDEzNDEgODIzIDE0NjMgNzQ2QzE1ODUgNjY5IDE3MDcgNTQxIDE4MjkgNTI5QzE5NTAgNTE2IDIwNzIgNjE4IDIxOTQgNjMxQzIzMTYgNjQ0IDI0MzggNTY3IDI0OTkgNTI5TDI1NjAgNDkwVjk1MUgyNDk5QzI0MzggOTUxIDIzMTYgOTUxIDIxOTQgOTUxQzIwNzIgOTUxIDE5NTAgOTUxIDE4MjkgOTUxQzE3MDcgOTUxIDE1ODUgOTUxIDE0NjMgOTUxQzEzNDEgOTUxIDEyMTkgOTUxIDEwOTcgOTUxQzk3NSA5NTEgODUzIDk1MSA3MzEgOTUxQzYxMCA5NTEgNDg4IDk1MSAzNjYgOTUxQzI0NCA5NTEgMTIyIDk1MSA2MSA5NTFIMFYzMzdaIiBmaWxsPSIjMzMzMzMzIi8+DQo8c3R5bGUgaWQ9InN0eWxpc2gtMiIgY2xhc3M9InN0eWxpc2giIHR5cGU9InRleHQvY3NzIj4uZW1vamkgew0KIGRpc3BsYXk6IG5vbmU7ICAgDQp9PC9zdHlsZT48L3N2Zz4="
-
-/***/ }),
-/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2418,19 +2369,19 @@ const accessorType = Object(typed_vuex__WEBPACK_IMPORTED_MODULE_0__["getAccessor
 });
 
 /***/ }),
-/* 104 */
+/* 102 */
 /***/ (function(module, exports) {
 
 module.exports = require("is-https");
 
 /***/ }),
-/* 105 */
+/* 103 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
 
 /***/ }),
-/* 106 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2469,7 +2420,7 @@ async function loadLanguageAsync(context, locale) {
 
         if (!messages) {
           try {
-            const langFileModule = await __webpack_require__(107)(`./${file}`);
+            const langFileModule = await __webpack_require__(105)(`./${file}`);
             const getter = langFileModule.default || langFileModule;
             messages = typeof getter === 'function' ? await Promise.resolve(getter(context, locale)) : getter;
           } catch (error) {
@@ -2493,7 +2444,7 @@ async function loadLanguageAsync(context, locale) {
 }
 
 /***/ }),
-/* 107 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -2531,17 +2482,17 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 107;
+webpackAsyncContext.id = 105;
 module.exports = webpackAsyncContext;
 
 /***/ }),
-/* 108 */
+/* 106 */
 /***/ (function(module, exports) {
 
 module.exports = require("cross-fetch/polyfill");
 
 /***/ }),
-/* 109 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2553,27 +2504,27 @@ Object.defineProperty(exports, "__esModule", {
 exports.createApolloClient = createApolloClient;
 exports.restartWebsockets = restartWebsockets;
 
-var _apolloClient = __webpack_require__(110);
+var _apolloClient = __webpack_require__(108);
 
 var _apolloLink = __webpack_require__(40);
 
-var _apolloUploadClient = __webpack_require__(111);
+var _apolloUploadClient = __webpack_require__(109);
 
 var _apolloCacheInmemory = __webpack_require__(33);
 
-var _subscriptionsTransportWs = __webpack_require__(112);
+var _subscriptionsTransportWs = __webpack_require__(110);
 
-var _messageTypes = _interopRequireDefault(__webpack_require__(113));
+var _messageTypes = _interopRequireDefault(__webpack_require__(111));
 
-var _apolloLinkWs = __webpack_require__(114);
+var _apolloLinkWs = __webpack_require__(112);
 
-var _apolloUtilities = __webpack_require__(115);
+var _apolloUtilities = __webpack_require__(113);
 
-var _apolloLinkPersistedQueries = __webpack_require__(116);
+var _apolloLinkPersistedQueries = __webpack_require__(114);
 
-var _apolloLinkContext = __webpack_require__(119);
+var _apolloLinkContext = __webpack_require__(117);
 
-var _apolloLinkState = __webpack_require__(120);
+var _apolloLinkState = __webpack_require__(118);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -2779,51 +2730,51 @@ function defaultGetAuth(tokenName) {
 }
 
 /***/ }),
-/* 110 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-client");
 
 /***/ }),
-/* 111 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-upload-client");
 
 /***/ }),
-/* 112 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = require("subscriptions-transport-ws");
 
 /***/ }),
-/* 113 */
+/* 111 */
 /***/ (function(module, exports) {
 
 module.exports = require("subscriptions-transport-ws/dist/message-types");
 
 /***/ }),
-/* 114 */
+/* 112 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-link-ws");
 
 /***/ }),
-/* 115 */
+/* 113 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-utilities");
 
 /***/ }),
-/* 116 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
-	 true ? factory(exports, __webpack_require__(40), __webpack_require__(117)) :
+	 true ? factory(exports, __webpack_require__(40), __webpack_require__(115)) :
 	undefined;
 }(this, (function (exports,apolloLink,graphql_language_printer) { 'use strict';
 
-var sha256 = __webpack_require__(118);
+var sha256 = __webpack_require__(116);
 var VERSION = 1;
 var defaultGenerateHash = function (query) {
     return sha256()
@@ -2992,31 +2943,31 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 117 */
+/* 115 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql/language/printer");
 
 /***/ }),
-/* 118 */
+/* 116 */
 /***/ (function(module, exports) {
 
 module.exports = require("hash.js/lib/hash/sha/256");
 
 /***/ }),
-/* 119 */
+/* 117 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-link-context");
 
 /***/ }),
-/* 120 */
+/* 118 */
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-link-state");
 
 /***/ }),
-/* 121 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3084,17 +3035,17 @@ __webpack_require__.r(__webpack_exports__);
 });
 
 /***/ }),
-/* 122 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-apollo/ssr");
 
 /***/ }),
-/* 123 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./icons.svg": 124
+	"./icons.svg": 122
 };
 
 
@@ -3115,22 +3066,22 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 123;
+webpackContext.id = 121;
 
 /***/ }),
-/* 124 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "012764c3c274a0b32e88e2ea96af83e2.svg";
 
 /***/ }),
-/* 125 */
+/* 123 */
 /***/ (function(module, exports) {
 
 // This file is intentionally left empty for noop aliases
 
 /***/ }),
-/* 126 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6225,7 +6176,7 @@ const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(103), 'store/index.ts'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(101), 'store/index.ts'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {};
@@ -6486,7 +6437,7 @@ function switchLocalePath(locale) {
       let protocol;
 
       if (true) {
-        const isHTTPS = __webpack_require__(104);
+        const isHTTPS = __webpack_require__(102);
 
         protocol = this.req && isHTTPS(this.req) ? 'https' : 'http';
       } else {}
@@ -6720,7 +6671,7 @@ var external_cookie_ = __webpack_require__(38);
 var external_cookie_default = /*#__PURE__*/__webpack_require__.n(external_cookie_);
 
 // EXTERNAL MODULE: external "js-cookie"
-var external_js_cookie_ = __webpack_require__(105);
+var external_js_cookie_ = __webpack_require__(103);
 
 // CONCATENATED MODULE: ./.nuxt/nuxt-i18n/utils-common.js
 
@@ -7157,7 +7108,7 @@ const getLocaleFromRoute = createLocaleFromRouteGetter(nuxt_i18n_options["o" /* 
     if (nuxt_i18n_options["n" /* lazy */]) {
       const {
         loadLanguageAsync
-      } = __webpack_require__(106); // Load fallback locale.
+      } = __webpack_require__(104); // Load fallback locale.
 
 
       if (app.i18n.fallbackLocale && newLocale !== app.i18n.fallbackLocale) {
@@ -7359,7 +7310,7 @@ var external_vue_apollo_ = __webpack_require__(39);
 var external_vue_apollo_default = /*#__PURE__*/__webpack_require__.n(external_vue_apollo_);
 
 // EXTERNAL MODULE: external "cross-fetch/polyfill"
-var polyfill_ = __webpack_require__(108);
+var polyfill_ = __webpack_require__(106);
 
 // EXTERNAL MODULE: ./node_modules/vue-cli-plugin-apollo/graphql-client/index.js
 var graphql_client = __webpack_require__(29);
@@ -7405,7 +7356,7 @@ external_vue_default.a.use(external_vue_apollo_default.a);
   }
 
   let defaultClientConfig;
-  defaultClientConfig = __webpack_require__(121);
+  defaultClientConfig = __webpack_require__(119);
 
   if ('default' in defaultClientConfig) {
     defaultClientConfig = defaultClientConfig.default;
@@ -7461,7 +7412,7 @@ external_vue_default.a.use(external_vue_apollo_default.a);
   app.apolloProvider = apolloProvider;
 
   if (true) {
-    const ApolloSSR = __webpack_require__(122);
+    const ApolloSSR = __webpack_require__(120);
 
     beforeNuxtRender(({
       nuxtState
@@ -7533,7 +7484,7 @@ function generateName(name) {
 
 
 function getSpritePath(sprite) {
-  const module = __webpack_require__(123)("./" + sprite + ".svg");
+  const module = __webpack_require__(121)("./" + sprite + ".svg");
 
   if (typeof module === 'string') {
     return module;
@@ -7659,7 +7610,7 @@ const storeAccessor = Object(lib["getAccessorFromStore"])(createStore());
   inject('accessor', storeAccessor(store));
 });
 // EXTERNAL MODULE: ./.nuxt/empty.js
-var _nuxt_empty = __webpack_require__(125);
+var _nuxt_empty = __webpack_require__(123);
 
 // CONCATENATED MODULE: ./.nuxt/index.js
 
