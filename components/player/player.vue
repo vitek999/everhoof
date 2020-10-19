@@ -97,7 +97,7 @@ export default class Player extends Vue {
   }
 
   get stream(): string {
-    return this.station.mounts[this.streamOrderId]?.url || '';
+    return (this.station.mounts[this.streamOrderId]?.url || '').replace(/^(https:|http:)/, '');
   }
 
   get playingData(): CurrentPlaying {
