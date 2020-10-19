@@ -57,7 +57,7 @@ export default class MainPage extends Vue {
   }
 
   get date(): string {
-    return DateTime.fromMillis(this.event?.startsAt || 0).toFormat('LL.MM.yyyy');
+    return DateTime.fromMillis(this.event?.startsAt || 0).toFormat('dd.MM.yyyy');
   }
 
   get time(): string {
