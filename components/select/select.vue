@@ -1,18 +1,12 @@
 <template>
   <!-- begin .select-->
-  <div class="select">
-    <button ref="button" class="select__title" @focus="focus" @blur="blur" @mousedown="mousedown">
+  <div ref="parent" class="select">
+    <button class="select__title" @click="mousedown">
       {{ title }}
     </button>
     <transition>
-      <ul v-show="focused" class="select__list">
-        <li
-          v-for="(item, i) in items"
-          v-show="item !== title"
-          :key="i"
-          class="select__item"
-          @mousedown.prevent="select(i)"
-        >
+      <ul v-show="focused" ref="options" class="select__list">
+        <li v-for="(item, i) in items" v-show="item !== title" :key="i" class="select__item" @click="select(i)">
           {{ item }}
         </li>
       </ul>
@@ -31,7 +25,8 @@ export default class Select extends Vue {
   @Prop({ type: Array, default: () => [] }) items!: string[];
   @Prop({ type: [Number, String], default: 0 }) value!: number | string;
 
-  @Ref() button!: HTMLButtonElement;
+  @Ref() parent!: HTMLDivElement;
+  @Ref() options!: HTMLUListElement;
 
   focused: boolean = false;
 
@@ -43,24 +38,28 @@ export default class Select extends Vue {
     return this.items && this.items[this.index] ? this.items[this.index] : 'EMPTY';
   }
 
+  mounted() {
+    document.addEventListener('click', (e: MouseEvent) => {
+      if (!this.parent.contains(e.target as Node) && this.focused) this.blur();
+    });
+  }
+
   focus() {
     this.focused = true;
   }
 
   blur() {
     this.focused = false;
-    this.button.blur();
   }
 
-  mousedown(e: MouseEvent) {
-    if (!this.focused) return this.button.focus();
-    e.preventDefault();
-    this.button.blur();
+  mousedown() {
+    if (!this.focused) this.focus();
+    else this.blur();
   }
 
   select(i: number) {
     this.$emit('input', i);
-    this.button.blur();
+    this.blur();
   }
 }
 </script>

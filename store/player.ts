@@ -39,7 +39,6 @@ export const mutations = mutationTree(state, {
   SET_TRACKS_HISTORY: (_state, payload: TracksHistoryItem[]) => (_state.tracksHistory = payload),
 
   SET_STREAM_ID: (_state, payload: number) => {
-    payload = 1;
     if (process.client && _state.streamId !== payload) new Cookies().set('stream_id', payload);
     _state.streamId = payload;
   },

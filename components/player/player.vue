@@ -27,7 +27,7 @@
     </div>
     <div class="player__controls">
       <div class="player__control player__quality-selector">
-        <b-select :items="station.mounts.map(({ name }) => name)" :value="streamOrderId" @input="selectStream" />
+        <b-select :items="station.mounts.map((mount) => mount.name)" :value="streamOrderId" @input="selectStream" />
       </div>
       <div class="player__control player__volume-slider">
         <b-volume-slider :volume="volume" :muted="muted" @update:volume="setVolume" @update:muted="setMuted" />
