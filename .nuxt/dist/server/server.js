@@ -3822,12 +3822,12 @@ var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vu
 var external_vue_router_ = __webpack_require__(35);
 var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/main/main.vue?vue&type=template&id=603f3d89&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./pages/main/main.vue?vue&type=template&id=eb85caee&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"main"},[_vm._ssrNode("<div class=\"main__player\">","</div>",[(_vm.event)?_c('b-tile',{staticClass:"tile_padding_small tile_borders_top main__row"},[(_vm.isLive)?_c('a',{staticClass:"main__announcement",attrs:{"href":"#"}},[_c('span',[_vm._v(_vm._s(_vm.$t('announcement.live')))]),_vm._v("\n        – "+_vm._s(_vm.summary)+"\n      ")]):_c('a',{staticClass:"main__announcement",attrs:{"href":"#"}},[_c('span',[_vm._v(_vm._s(_vm.date))]),_vm._v(" "+_vm._s(_vm.$t('announcement.at'))+" "),_c('span',[_vm._v(_vm._s(_vm.time))]),_vm._v(" "),(_vm.lessThan10Hours)?_c('i',[_vm._v(" ("+_vm._s(_vm.$t('announcement.in'))+" "+_vm._s(_vm._f("toRemainingTime")(_vm.remainingTime))+") ")]):_vm._e(),_vm._v("\n        – "+_vm._s(_vm.summary)+"\n      ")])]):_vm._e(),_vm._ssrNode(" "),_c('b-tile',{staticClass:"tile_padding_medium main__row",class:[{ tile_borders_top: !_vm.event }]},[_c('b-player')],1),_vm._ssrNode(" "),_c('b-tile',{staticClass:"tile_padding_small tile_borders_bottom main__row"},[_c('b-player-buttons')],1)],2)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/main/main.vue?vue&type=template&id=603f3d89&
+// CONCATENATED MODULE: ./pages/main/main.vue?vue&type=template&id=eb85caee&
 
 // EXTERNAL MODULE: external "nuxt-property-decorator"
 var external_nuxt_property_decorator_ = __webpack_require__(1);
@@ -4996,7 +4996,7 @@ let mainvue_type_script_lang_ts_MainPage = class MainPage extends external_nuxt_
   get date() {
     var _a;
 
-    return external_luxon_["DateTime"].fromMillis(((_a = this.event) === null || _a === void 0 ? void 0 : _a.startsAt) || 0).toFormat('LL.MM.yyyy');
+    return external_luxon_["DateTime"].fromMillis(((_a = this.event) === null || _a === void 0 ? void 0 : _a.startsAt) || 0).toFormat('dd.MM.yyyy');
   }
 
   get time() {
