@@ -1,5 +1,5 @@
 export type Maybe<T> = T | null;
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] };
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -7,13 +7,29 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format. */
+  DateTime: any;
 };
 
-export type CalendarEvent = {
-  __typename?: 'CalendarEvent';
-  summary: Scalars['String'];
-  startsAt: Scalars['Float'];
-  endsAt: Scalars['Float'];
+export type Query = {
+  __typename?: 'Query';
+  getCurrentUser: User;
+  getCurrentPlaying?: Maybe<CurrentPlaying>;
+  getTracksHistory: Array<HistoryItem>;
+  getCalendarEvents: Array<CalendarEvent>;
+  getStation: Station;
+  getRecordings: Array<Recording>;
+  getHello: Scalars['String'];
+};
+
+export type User = {
+  __typename?: 'User';
+  id: Scalars['Int'];
+  email: Scalars['String'];
+  username?: Maybe<Scalars['String']>;
+  wasOnlineAt?: Maybe<Scalars['DateTime']>;
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
 };
 
 export type CurrentPlaying = {
@@ -38,18 +54,60 @@ export type CurrentPlayingTrack = {
   art: Scalars['String'];
 };
 
-export type Listeners = {
-  __typename?: 'Listeners';
-  current: Scalars['Float'];
-  unique: Scalars['Float'];
-  total: Scalars['Float'];
-};
-
 export type Live = {
   __typename?: 'Live';
   isLive: Scalars['Boolean'];
   streamerName: Scalars['String'];
   broadcastStart: Scalars['Float'];
+};
+
+export type HistoryItem = {
+  __typename?: 'HistoryItem';
+  id: Scalars['Float'];
+  playedAt: Scalars['Float'];
+  duration: Scalars['Float'];
+  playlist: Scalars['String'];
+  streamer: Scalars['String'];
+  isRequest: Scalars['Boolean'];
+  track: Track;
+};
+
+export type Track = {
+  __typename?: 'Track';
+  id: Scalars['String'];
+  text: Scalars['String'];
+  artist: Scalars['String'];
+  title: Scalars['String'];
+  album: Scalars['String'];
+  lyrics: Scalars['String'];
+  art: Scalars['String'];
+};
+
+export type CalendarEvent = {
+  __typename?: 'CalendarEvent';
+  summary: Scalars['String'];
+  startsAt: Scalars['Float'];
+  endsAt: Scalars['Float'];
+};
+
+export type Station = {
+  __typename?: 'Station';
+  id: Scalars['Float'];
+  name: Scalars['String'];
+  shortcode: Scalars['String'];
+  description: Scalars['String'];
+  frontend: Scalars['String'];
+  backend: Scalars['String'];
+  listenUrl: Scalars['String'];
+  public: Scalars['Boolean'];
+  playlists: Playlists;
+  mounts: Array<Mount>;
+};
+
+export type Playlists = {
+  __typename?: 'Playlists';
+  m3u: Scalars['String'];
+  pls: Scalars['String'];
 };
 
 export type Mount = {
@@ -62,6 +120,22 @@ export type Mount = {
   bitrate: Scalars['Float'];
   format: Scalars['String'];
   listeners: Listeners;
+};
+
+export type Listeners = {
+  __typename?: 'Listeners';
+  current: Scalars['Float'];
+  unique: Scalars['Float'];
+  total: Scalars['Float'];
+};
+
+export type Recording = {
+  __typename?: 'Recording';
+  name: Scalars['String'];
+  img: Scalars['String'];
+  year: Scalars['String'];
+  desc: Scalars['String'];
+  size: Scalars['Float'];
 };
 
 export type Mutation = {
@@ -81,80 +155,14 @@ export type MutationSignUpArgs = {
   password: Scalars['String'];
 };
 
-export type Picture = {
-  __typename?: 'Picture';
-  id: Scalars['Int'];
-  height: Scalars['Float'];
-  width: Scalars['Float'];
-  size: Scalars['Float'];
-  path: Scalars['String'];
-  link: Scalars['String'];
-  ownerId?: Maybe<Scalars['Int']>;
-  createdAt: Scalars['String'];
-};
-
-export type Playlists = {
-  __typename?: 'Playlists';
-  m3u: Scalars['String'];
-  pls: Scalars['String'];
-};
-
-export type Query = {
-  __typename?: 'Query';
-  getHello: Scalars['String'];
-  getCurrentUser: User;
-  getTracksHistory: Array<TracksHistoryItem>;
-  getCurrentPlaying?: Maybe<CurrentPlaying>;
-  getCalendarEvents: Array<CalendarEvent>;
-  getStation: Station;
-};
-
-export type Station = {
-  __typename?: 'Station';
-  id: Scalars['Float'];
-  name: Scalars['String'];
-  shortcode: Scalars['String'];
-  description: Scalars['String'];
-  frontend: Scalars['String'];
-  backend: Scalars['String'];
-  listenUrl: Scalars['String'];
-  public: Scalars['Boolean'];
-  playlists: Playlists;
-  mounts: Array<Mount>;
-};
-
 export type Token = {
   __typename?: 'Token';
   id: Scalars['Int'];
   value: Scalars['String'];
   ownerId: Scalars['Int'];
-  createdAt: Scalars['String'];
-  expiresIn: Scalars['String'];
-  usedAt: Scalars['String'];
-};
-
-export type TracksHistoryItem = {
-  __typename?: 'TracksHistoryItem';
-  starts: Scalars['String'];
-  ends: Scalars['String'];
-  history_id: Scalars['Int'];
-  instance_id: Scalars['Int'];
-  track_title?: Maybe<Scalars['String']>;
-  artist_name?: Maybe<Scalars['String']>;
-  info_url?: Maybe<Scalars['String']>;
-  checkbox: Scalars['String'];
-};
-
-export type User = {
-  __typename?: 'User';
-  id: Scalars['Int'];
-  email: Scalars['String'];
-  username?: Maybe<Scalars['String']>;
-  registeredAt: Scalars['String'];
-  onlineAt: Scalars['String'];
-  role: Scalars['Float'];
-  avatar: Picture;
-  background: Picture;
+  createdAt: Scalars['DateTime'];
+  expiresAt?: Maybe<Scalars['DateTime']>;
+  usedAt?: Maybe<Scalars['DateTime']>;
 };
 
 export type SignInMutationVariables = Exact<{
@@ -215,12 +223,7 @@ export type GetGeneralDataQuery = { __typename?: 'Query' } & {
       }
   >;
   getCalendarEvents: Array<{ __typename?: 'CalendarEvent' } & Pick<CalendarEvent, 'summary' | 'startsAt' | 'endsAt'>>;
-  getTracksHistory: Array<
-    { __typename?: 'TracksHistoryItem' } & Pick<
-      TracksHistoryItem,
-      'track_title' | 'artist_name' | 'info_url' | 'ends' | 'starts'
-    >
-  >;
+  getTracksHistory: Array<{ __typename?: 'HistoryItem' } & { track: { __typename?: 'Track' } & Pick<Track, 'text'> }>;
   getStation: { __typename?: 'Station' } & Pick<Station, 'id' | 'name' | 'description'> & {
       playlists: { __typename?: 'Playlists' } & Pick<Playlists, 'm3u'>;
       mounts: Array<

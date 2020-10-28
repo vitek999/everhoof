@@ -2,14 +2,8 @@
   <!-- begin .history-modal-->
   <div class="history-modal">
     <ul class="history-modal__list">
-      <li
-        v-for="(track, i) in tracks"
-        :key="i"
-        class="history-modal__item"
-        :title="`${track.artist_name} – ${track.track_title}`"
-      >
-        {{ i + 1 }}. {{ track.artist_name }} –
-        {{ track.track_title }}
+      <li v-for="(track, i) in tracks" :key="i" class="history-modal__item" :title="`${track.text}`">
+        {{ i + 1 }}. {{ track.text }}
       </li>
     </ul>
   </div>
@@ -18,13 +12,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { TracksHistoryItem } from '~/graphql/schema';
+import { HistoryItem } from '~/graphql/schema';
 
 @Component({
   name: 'b-history-modal',
 })
 export default class HistoryModal extends Vue {
-  get tracks(): TracksHistoryItem[] {
+  get tracks(): HistoryItem[] {
     return this.$accessor.player.tracksHistory || [];
   }
 }

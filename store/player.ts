@@ -10,7 +10,7 @@ import {
   GetCurrentPlayingQuery,
   GetGeneralDataQuery,
   Live,
-  TracksHistoryItem,
+  HistoryItem,
 } from '~/graphql/schema';
 import GetGeneralData from '~/graphql/queries/GetGeneralData.graphql';
 import GetCurrentPlaying from '~/graphql/queries/GetCurrentPlaying.graphql';
@@ -22,7 +22,7 @@ export const namespaced = true;
 export const state = () => ({
   playingDataState: null as CurrentPlaying | null,
   calendarEventsState: [] as CalendarEvent[],
-  tracksHistory: [] as TracksHistoryItem[],
+  tracksHistory: [] as HistoryItem[],
   stationState: null as GetGeneralDataQuery['getStation'] | null,
   streamId: 0 as number,
   volume: 0.9 as number,
@@ -36,7 +36,7 @@ export const mutations = mutationTree(state, {
 
   SET_CALENDAR_EVENTS: (_state, payload: CalendarEvent[]) => (_state.calendarEventsState = payload),
 
-  SET_TRACKS_HISTORY: (_state, payload: TracksHistoryItem[]) => (_state.tracksHistory = payload),
+  SET_TRACKS_HISTORY: (_state, payload: HistoryItem[]) => (_state.tracksHistory = payload),
 
   SET_STREAM_ID: (_state, payload: number) => {
     if (process.client && _state.streamId !== payload) new Cookies().set('stream_id', payload);
@@ -171,7 +171,7 @@ export const actions = actionTree(
       commit('SET_PLAYING_DATA', data.getCurrentPlaying);
       commit('SET_STATION', data.getStation);
       commit('SET_CALENDAR_EVENTS', data.getCalendarEvents);
-      commit('SET_TRACKS_HISTORY', data.getTracksHistory as TracksHistoryItem[]);
+      commit('SET_TRACKS_HISTORY', data.getTracksHistory as HistoryItem[]);
     },
 
     async getCalendarEvents({ commit }, context: Context) {

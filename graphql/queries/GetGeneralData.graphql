@@ -44,11 +44,9 @@ query GetGeneralData {
     endsAt
   }
   getTracksHistory {
-    track_title
-    artist_name
-    info_url
-    ends
-    starts
+    track {
+      text
+    }
   }
   getStation {
     id
